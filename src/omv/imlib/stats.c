@@ -583,6 +583,7 @@ void imlib_get_statistics(statistics_t *out, image_bpp_t bpp, histogram_t *ptr)
                 median_count += ptr->LBins[i];
             }
 
+            out->LMean_float = avg;
             out->LMean = fast_floorf(avg);
             out->LSTDev = fast_floorf(fast_sqrtf(stdev - (avg * avg)));
             break;
@@ -632,6 +633,7 @@ void imlib_get_statistics(statistics_t *out, image_bpp_t bpp, histogram_t *ptr)
                 median_count += ptr->LBins[i];
             }
 
+            out->LMean_float = avg;
             out->LMean = fast_floorf(avg);
             out->LSTDev = fast_floorf(fast_sqrtf(stdev - (avg * avg)));
             break;
@@ -681,7 +683,7 @@ void imlib_get_statistics(statistics_t *out, image_bpp_t bpp, histogram_t *ptr)
 
                     median_count += ptr->LBins[i];
                 }
-
+                out->LMean_float = avg;
                 out->LMean = fast_floorf(avg);
                 out->LSTDev = fast_floorf(fast_sqrtf(stdev - (avg * avg)));
             }
@@ -729,7 +731,7 @@ void imlib_get_statistics(statistics_t *out, image_bpp_t bpp, histogram_t *ptr)
 
                     median_count += ptr->ABins[i];
                 }
-
+                out->AMean_float = avg;
                 out->AMean = fast_floorf(avg);
                 out->ASTDev = fast_floorf(fast_sqrtf(stdev - (avg * avg)));
             }
@@ -777,7 +779,7 @@ void imlib_get_statistics(statistics_t *out, image_bpp_t bpp, histogram_t *ptr)
 
                     median_count += ptr->BBins[i];
                 }
-
+                out->BMean_float = avg;
                 out->BMean = fast_floorf(avg);
                 out->BSTDev = fast_floorf(fast_sqrtf(stdev - (avg * avg)));
             }

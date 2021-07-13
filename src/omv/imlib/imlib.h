@@ -812,6 +812,7 @@ typedef struct threshold {
 
 typedef struct statistics {
     uint8_t LMean, LMedian, LMode, LSTDev, LMin, LMax, LLQ, LUQ;
+    float LMean_float;
     int8_t AMean, AMedian, AMode, ASTDev, AMin, AMax, ALQ, AUQ;
     int8_t BMean, BMedian, BMode, BSTDev, BMin, BMax, BLQ, BUQ;
 } statistics_t;
